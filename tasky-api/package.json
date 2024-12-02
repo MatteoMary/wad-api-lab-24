@@ -1,0 +1,24 @@
+{
+  "name": "tasky-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env BABEL_DISABLE_CACHE=1 babel-node index.js",
+    "dev": "nodemon --exec npm start"
+  },
+  "author": "MatteoMary20098764",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.25.9",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  }
+}
