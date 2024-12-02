@@ -1,0 +1,22 @@
+{
+  "name": "node-lab1",
+  "version": "1.0.0",
+  "description": "node lab 1",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env BABEL_DISABLE_CACHE=1 babel-node index.js",
+    "dev": "nodemon --exec npm start"
+  },
+  "author": "MatteoMary",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^9.16.0",
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
