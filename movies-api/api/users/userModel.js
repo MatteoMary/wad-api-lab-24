@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 
 const userSchema = new mongoose.Schema({
-    userName: { type: String, required: true },
+    username: { type: String, required: true },
     password: {
         type: String,
         required: true,
@@ -22,7 +22,7 @@ userSchema.methods.comparePassword = async function (passw) {
 
 // Add a static method
 userSchema.statics.findByUserName = function (username) {
-    return this.findOne({ userName: username });
+    return this.findOne({ username: username });
 };
 
 // Pre-save hook for hashing the password

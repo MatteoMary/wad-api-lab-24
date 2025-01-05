@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 // register(Create)/Authenticate User
 router.post('/', asyncHandler(async (req, res) => {
     try {
-        if (!req.body.userName || !req.body.password) {
+        if (!req.body.username || !req.body.password) {
             return res.status(400).json({ success: false, msg: 'Username and password are required.' });
         }
         if (req.query.action === 'register') {
@@ -46,18 +46,19 @@ async function registerUser(req, res) {
 }
 
 async function authenticateUser(req, res) {
-    const user = await User.findByUserName(req.body.userName);
+    const user = await User.findByUserName(req.body.username);
     if (!user) {
         return res.status(401).json({ success: false, msg: 'Authentication failed. User not found.' });
     }
 
     const isMatch = await user.comparePassword(req.body.password);
     if (isMatch) {
-        const token = jwt.sign({ userName: user.userName }, process.env.SECRET);
+        const token = jwt.sign({ username: user.username }, process.env.SECRET);
         res.status(200).json({ success: true, token: 'BEARER ' + token });
     } else {
         res.status(401).json({ success: false, msg: 'Wrong password.' });
     }
 }
+
 
 export default router;
