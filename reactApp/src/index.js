@@ -6,6 +6,7 @@ import ProfilePage from "./pages/profilePage";
 import MoviesPage from "./pages/moviesPage";
 import { QueryClientProvider, QueryClient } from "react-query";
 import Header from "./components/siteHeader";
+import SignUpPage from "./pages/signUpPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/" element={ <PublicPage /> } />
           <Route path="/movies" element={ <MoviesPage /> } />
           <Route path="/profile" element={ <ProfilePage /> } />
+          <Route path="/signup" element={ <SignUpPage /> } />
           <Route path="*" element={ <Navigate to="/" /> } />
         </Routes>
     </BrowserRouter>
