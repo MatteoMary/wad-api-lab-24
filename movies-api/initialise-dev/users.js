@@ -1,10 +1,10 @@
 const  users = [
     {
-        'username': 'user1',
+        'userName': 'user1',
         'password': 'test123@',
     },
     {
-        'username': 'user2',
+        'userName': 'user2',
         'password': 'test456@',
     },
 ];
